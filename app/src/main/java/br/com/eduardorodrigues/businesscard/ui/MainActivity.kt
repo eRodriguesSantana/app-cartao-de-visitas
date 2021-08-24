@@ -1,8 +1,8 @@
 package br.com.eduardorodrigues.businesscard.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import br.com.eduardorodrigues.businesscard.R
 import br.com.eduardorodrigues.businesscard.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -11,5 +11,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        insertListener()
+    }
+
+    private fun insertListener() {
+        binding.fab.setOnClickListener{
+            val intent = Intent(this@MainActivity, AddBusinessCardActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
